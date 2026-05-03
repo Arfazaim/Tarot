@@ -1,0 +1,1250 @@
+[
+  {
+    "id": "major-0",
+    "name": "The Fool",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 0,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-0.jpg"
+  },
+  {
+    "id": "major-1",
+    "name": "The Magician",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 1,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-1.jpg"
+  },
+  {
+    "id": "major-2",
+    "name": "The High Priestess",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 2,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-2.jpg"
+  },
+  {
+    "id": "major-3",
+    "name": "The Empress",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 3,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-3.jpg"
+  },
+  {
+    "id": "major-4",
+    "name": "The Emperor",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 4,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-4.jpg"
+  },
+  {
+    "id": "major-5",
+    "name": "The Hierophant",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 5,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-5.jpg"
+  },
+  {
+    "id": "major-6",
+    "name": "The Lovers",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 6,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-6.jpg"
+  },
+  {
+    "id": "major-7",
+    "name": "The Chariot",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 7,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-7.jpg"
+  },
+  {
+    "id": "major-8",
+    "name": "Strength",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 8,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-8.jpg"
+  },
+  {
+    "id": "major-9",
+    "name": "The Hermit",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 9,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-9.jpg"
+  },
+  {
+    "id": "major-10",
+    "name": "Wheel of Fortune",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 10,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-10.jpg"
+  },
+  {
+    "id": "major-11",
+    "name": "Justice",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 11,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-11.jpg"
+  },
+  {
+    "id": "major-12",
+    "name": "The Hanged Man",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 12,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-12.jpg"
+  },
+  {
+    "id": "major-13",
+    "name": "Death",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 13,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-13.jpg"
+  },
+  {
+    "id": "major-14",
+    "name": "Temperance",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 14,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-14.jpg"
+  },
+  {
+    "id": "major-15",
+    "name": "The Devil",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 15,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-15.jpg"
+  },
+  {
+    "id": "major-16",
+    "name": "The Tower",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 16,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-16.jpg"
+  },
+  {
+    "id": "major-17",
+    "name": "The Star",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 17,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-17.jpg"
+  },
+  {
+    "id": "major-18",
+    "name": "The Moon",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 18,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-18.jpg"
+  },
+  {
+    "id": "major-19",
+    "name": "The Sun",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 19,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-19.jpg"
+  },
+  {
+    "id": "major-20",
+    "name": "Judgement",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 20,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-20.jpg"
+  },
+  {
+    "id": "major-21",
+    "name": "The World",
+    "arcana": "Major",
+    "suit": "None",
+    "number": 21,
+    "keywords": [
+      "Key 1",
+      "Key 2"
+    ],
+    "meanings": {
+      "upright": "Upright meaning",
+      "reversed": "Reversed meaning"
+    },
+    "imagePath": "/assets/cards/major-21.jpg"
+  },
+  {
+    "id": "minor-wands-1",
+    "name": "Ace of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 1,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-1.jpg"
+  },
+  {
+    "id": "minor-wands-2",
+    "name": "2 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 2,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-2.jpg"
+  },
+  {
+    "id": "minor-wands-3",
+    "name": "3 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 3,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-3.jpg"
+  },
+  {
+    "id": "minor-wands-4",
+    "name": "4 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 4,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-4.jpg"
+  },
+  {
+    "id": "minor-wands-5",
+    "name": "5 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 5,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-5.jpg"
+  },
+  {
+    "id": "minor-wands-6",
+    "name": "6 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 6,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-6.jpg"
+  },
+  {
+    "id": "minor-wands-7",
+    "name": "7 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 7,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-7.jpg"
+  },
+  {
+    "id": "minor-wands-8",
+    "name": "8 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 8,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-8.jpg"
+  },
+  {
+    "id": "minor-wands-9",
+    "name": "9 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 9,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-9.jpg"
+  },
+  {
+    "id": "minor-wands-10",
+    "name": "10 of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 10,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-10.jpg"
+  },
+  {
+    "id": "minor-wands-11",
+    "name": "Page of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 11,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-11.jpg"
+  },
+  {
+    "id": "minor-wands-12",
+    "name": "Knight of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 12,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-12.jpg"
+  },
+  {
+    "id": "minor-wands-13",
+    "name": "Queen of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 13,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-13.jpg"
+  },
+  {
+    "id": "minor-wands-14",
+    "name": "King of Wands",
+    "arcana": "Minor",
+    "suit": "Wands",
+    "number": 14,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-wands-14.jpg"
+  },
+  {
+    "id": "minor-cups-1",
+    "name": "Ace of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 1,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-1.jpg"
+  },
+  {
+    "id": "minor-cups-2",
+    "name": "2 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 2,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-2.jpg"
+  },
+  {
+    "id": "minor-cups-3",
+    "name": "3 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 3,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-3.jpg"
+  },
+  {
+    "id": "minor-cups-4",
+    "name": "4 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 4,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-4.jpg"
+  },
+  {
+    "id": "minor-cups-5",
+    "name": "5 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 5,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-5.jpg"
+  },
+  {
+    "id": "minor-cups-6",
+    "name": "6 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 6,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-6.jpg"
+  },
+  {
+    "id": "minor-cups-7",
+    "name": "7 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 7,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-7.jpg"
+  },
+  {
+    "id": "minor-cups-8",
+    "name": "8 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 8,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-8.jpg"
+  },
+  {
+    "id": "minor-cups-9",
+    "name": "9 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 9,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-9.jpg"
+  },
+  {
+    "id": "minor-cups-10",
+    "name": "10 of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 10,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-10.jpg"
+  },
+  {
+    "id": "minor-cups-11",
+    "name": "Page of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 11,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-11.jpg"
+  },
+  {
+    "id": "minor-cups-12",
+    "name": "Knight of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 12,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-12.jpg"
+  },
+  {
+    "id": "minor-cups-13",
+    "name": "Queen of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 13,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-13.jpg"
+  },
+  {
+    "id": "minor-cups-14",
+    "name": "King of Cups",
+    "arcana": "Minor",
+    "suit": "Cups",
+    "number": 14,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-cups-14.jpg"
+  },
+  {
+    "id": "minor-swords-1",
+    "name": "Ace of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 1,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-1.jpg"
+  },
+  {
+    "id": "minor-swords-2",
+    "name": "2 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 2,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-2.jpg"
+  },
+  {
+    "id": "minor-swords-3",
+    "name": "3 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 3,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-3.jpg"
+  },
+  {
+    "id": "minor-swords-4",
+    "name": "4 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 4,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-4.jpg"
+  },
+  {
+    "id": "minor-swords-5",
+    "name": "5 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 5,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-5.jpg"
+  },
+  {
+    "id": "minor-swords-6",
+    "name": "6 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 6,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-6.jpg"
+  },
+  {
+    "id": "minor-swords-7",
+    "name": "7 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 7,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-7.jpg"
+  },
+  {
+    "id": "minor-swords-8",
+    "name": "8 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 8,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-8.jpg"
+  },
+  {
+    "id": "minor-swords-9",
+    "name": "9 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 9,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-9.jpg"
+  },
+  {
+    "id": "minor-swords-10",
+    "name": "10 of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 10,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-10.jpg"
+  },
+  {
+    "id": "minor-swords-11",
+    "name": "Page of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 11,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-11.jpg"
+  },
+  {
+    "id": "minor-swords-12",
+    "name": "Knight of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 12,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-12.jpg"
+  },
+  {
+    "id": "minor-swords-13",
+    "name": "Queen of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 13,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-13.jpg"
+  },
+  {
+    "id": "minor-swords-14",
+    "name": "King of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "number": 14,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-swords-14.jpg"
+  },
+  {
+    "id": "minor-pentacles-1",
+    "name": "Ace of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 1,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-1.jpg"
+  },
+  {
+    "id": "minor-pentacles-2",
+    "name": "2 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 2,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-2.jpg"
+  },
+  {
+    "id": "minor-pentacles-3",
+    "name": "3 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 3,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-3.jpg"
+  },
+  {
+    "id": "minor-pentacles-4",
+    "name": "4 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 4,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-4.jpg"
+  },
+  {
+    "id": "minor-pentacles-5",
+    "name": "5 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 5,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-5.jpg"
+  },
+  {
+    "id": "minor-pentacles-6",
+    "name": "6 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 6,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-6.jpg"
+  },
+  {
+    "id": "minor-pentacles-7",
+    "name": "7 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 7,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-7.jpg"
+  },
+  {
+    "id": "minor-pentacles-8",
+    "name": "8 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 8,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-8.jpg"
+  },
+  {
+    "id": "minor-pentacles-9",
+    "name": "9 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 9,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-9.jpg"
+  },
+  {
+    "id": "minor-pentacles-10",
+    "name": "10 of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 10,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-10.jpg"
+  },
+  {
+    "id": "minor-pentacles-11",
+    "name": "Page of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 11,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-11.jpg"
+  },
+  {
+    "id": "minor-pentacles-12",
+    "name": "Knight of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 12,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-12.jpg"
+  },
+  {
+    "id": "minor-pentacles-13",
+    "name": "Queen of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 13,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-13.jpg"
+  },
+  {
+    "id": "minor-pentacles-14",
+    "name": "King of Pentacles",
+    "arcana": "Minor",
+    "suit": "Pentacles",
+    "number": 14,
+    "keywords": [
+      "Minor",
+      "Energy"
+    ],
+    "meanings": {
+      "upright": "Minor upright",
+      "reversed": "Minor reversed"
+    },
+    "imagePath": "/assets/cards/minor-pentacles-14.jpg"
+  }
+]

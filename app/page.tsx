@@ -1,65 +1,97 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import { useChat } from '@ai-sdk/react';
+import { useTarotStore } from '@/store/useTarotStore';
+import { drawCards, getFullDeck } from '@/features/tarot/engine';
+import TarotCard from '@/components/ui/TarotCard';
 
 export default function Home() {
+  const { currentSpread, setSpread, question } = useTarotStore();
+  const [input, setInput] = useState('');
+  const { messages, sendMessage } = useChat({});
+
+  const handleDrawThreeCards = () => {
+    const deck = getFullDeck();
+    const drawn = drawCards(deck, 3, ['Masa Lalu', 'Masa Kini', 'Masa Depan']);
+    setSpread(drawn, "Bagaimana arah karir saya?"); 
+  };
+
+  const handleDrawCelticCross = () => {
+    const deck = getFullDeck();
+    const positions = [
+      'The Present', 'The Challenge', 'The Past', 'The Future',
+      'Above (Conscious)', 'Below (Subconscious)', 'Advice',
+      'External Influences', 'Hopes and Fears', 'Outcome'
+    ];
+    const drawn = drawCards(deck, 10, positions);
+    setSpread(drawn, "Tolong baca energi saat ini secara mendalam dengan Celtic Cross.");
+  };
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    
+    sendMessage(
+      { role: 'user', parts: [{ type: 'text', text: input }] },
+      { body: { question, drawnCards: currentSpread } }
+    );
+    setInput('');
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen bg-neutral-950 text-neutral-100 p-8">
+      <h1 className="text-3xl font-bold mb-8 text-center text-gold-500">Tarot AI Reading</h1>
+      
+      <div className="flex flex-wrap justify-center gap-6 mb-12">
+        {currentSpread.length === 0 ? (
+          <div className="flex gap-4">
+            <button 
+              onClick={handleDrawThreeCards}
+              className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-semibold transition"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Tarik 3 Kartu
+            </button>
+            <button 
+              onClick={handleDrawCelticCross}
+              className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold transition"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              Celtic Cross (10 Kartu)
+            </button>
+          </div>
+        ) : (
+          currentSpread.map((card, idx) => (
+            <div key={card.id} className="flex flex-col items-center gap-4">
+              <span className="text-sm font-medium text-indigo-300">{card.spreadPosition}</span>
+              <TarotCard card={card} delay={idx * 0.2} />
+            </div>
+          ))
+        )}
+      </div>
+
+      {currentSpread.length > 0 && (
+        <section className="max-w-2xl mx-auto bg-neutral-900 p-6 rounded-xl border border-neutral-800">
+          <div className="space-y-4 mb-4 max-h-64 overflow-y-auto">
+            {messages.map((m: any) => (
+              <div key={m.id} className={m.role === 'user' ? 'text-right text-indigo-400' : 'text-left text-neutral-300'}>
+                {m.parts && m.parts[0]?.text ? m.parts[0].text : m.content || m.text}
+              </div>
+            ))}
+          </div>
+
+          <form onSubmit={onSubmit} className="flex gap-2">
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Tanyakan sesuatu pada kartu..."
+              className="flex-1 bg-neutral-800 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <button type="submit" className="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">
+              Kirim
+            </button>
+          </form>
+        </section>
+      )}
+    </main>
   );
 }
