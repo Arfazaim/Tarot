@@ -1,28 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050816;
+  --foreground: #eef2ff;
+  --muted-foreground: #94a3b8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body-face);
+  --font-display: var(--font-display-face);
+  --font-mono: var(--font-mono-face);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+    background:
+      radial-gradient(circle at top, rgba(129, 140, 248, 0.24), transparent 34%),
+      radial-gradient(circle at 18% 20%, rgba(251, 191, 36, 0.18), transparent 20%),
+      radial-gradient(circle at 82% 12%, rgba(56, 189, 248, 0.12), transparent 18%),
+      linear-gradient(180deg, #050816 0%, #070d19 42%, #02040b 100%);
+    color: var(--foreground);
+    font-family: var(--font-body-face), sans-serif;
+  }
+
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  body::before {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.55) 0 1px, transparent 1px),
+      radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.42) 0 1px, transparent 1px),
+      radial-gradient(circle at 35% 75%, rgba(255, 255, 255, 0.35) 0 1px, transparent 1px),
+      radial-gradient(circle at 72% 82%, rgba(255, 255, 255, 0.28) 0 1px, transparent 1px),
+      linear-gradient(120deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px),
+      linear-gradient(60deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px);
+    background-size: 210px 210px, 260px 260px, 320px 320px, 380px 380px, 220px 220px, 280px 280px;
+    opacity: 0.32;
+    mix-blend-mode: screen;
+  }
+
+  body::after {
+    inset: -20%;
+    background:
+      radial-gradient(circle at center, transparent 0 58%, rgba(5, 8, 22, 0.85) 72%),
+      radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.16), transparent 45%),
+      radial-gradient(circle at 18% 30%, rgba(251, 191, 36, 0.08), transparent 30%),
+      radial-gradient(circle at 78% 24%, rgba(14, 165, 233, 0.1), transparent 28%);
+    filter: blur(24px);
+    opacity: 0.5;
+    animation: astral-drift 34s linear infinite;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display-face), serif;
+    letter-spacing: 0.02em;
+  }
+
+  ::selection {
+    background: rgba(251, 191, 36, 0.3);
+    color: #fff7ed;
+  }
 }
 
 @layer utilities {
@@ -34,5 +93,32 @@ body {
   }
   .backface-hidden {
     backface-visibility: hidden;
+  }
+
+  .cosmic-panel {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(5, 8, 22, 0.62);
+    box-shadow: 0 30px 80px rgba(2, 6, 23, 0.42);
+    backdrop-filter: blur(22px);
+  }
+
+  .cosmic-panel-strong {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(8, 11, 24, 0.82);
+    box-shadow: 0 35px 90px rgba(2, 6, 23, 0.52);
+    backdrop-filter: blur(26px);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 24px rgba(251, 191, 36, 0.38);
+  }
+}
+
+@keyframes astral-drift {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(2rem, -1rem, 0) rotate(360deg);
   }
 }

@@ -1,5 +1,5 @@
-import { streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { streamText, convertToModelMessages } from 'ai';
+import { groq } from '@ai-sdk/groq';
 import { generateTarotSystemPrompt } from '@/features/ai/prompts';
 import { DrawnCard } from '@/features/tarot/types';
 
@@ -7,18 +7,19 @@ import { DrawnCard } from '@/features/tarot/types';
 export const runtime = 'edge';
 
 export async function POST(req: Request) {
-  const { messages, question, drawnCards } = await req.json();
+  const body = await req.json().catch(() => ({}));
+  const messages = Array.isArray(body.messages) ? body.messages : [];
+  const question = typeof body.question === 'string' && body.question.trim().length > 0 ? body.question : 'Pembacaan umum';
+  const drawnCards = Array.isArray(body.drawnCards) ? (body.drawnCards as DrawnCard[]) : [];
 
-  // Membangun prompt dasar berdasarkan kartu yang baru ditarik
-  const systemPrompt = generateTarotSystemPrompt(
-    question || "Membaca energi umum", 
-    drawnCards as DrawnCard[]
-  );
+  const systemPrompt = generateTarotSystemPrompt(question, drawnCards);
 
   const result = streamText({
-    model: openai('gpt-4o'), // Atau model lain sesuai preferensi
+    model: groq('llama-3.1-8b-instant'),
     system: systemPrompt,
-    messages,
+    messages: await convertToModelMessages(messages),
+    temperature: 0.8,
+    maxRetries: 0,
   });
 
   return result.toUIMessageStreamResponse();
