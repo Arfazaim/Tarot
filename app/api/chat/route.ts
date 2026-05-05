@@ -1,10 +1,14 @@
 import { streamText, convertToModelMessages } from 'ai';
-import { groq } from '@ai-sdk/groq';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { generateTarotSystemPrompt } from '@/features/ai/prompts';
 import { DrawnCard } from '@/features/tarot/types';
 
 // Memaksa eksekusi di Edge Runtime untuk performa streaming
 export const runtime = 'edge';
+
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GEMINI_API_KEY ?? process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+});
 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
@@ -15,7 +19,7 @@ export async function POST(req: Request) {
   const systemPrompt = generateTarotSystemPrompt(question, drawnCards);
 
   const result = streamText({
-    model: groq('llama-3.1-8b-instant'),
+    model: google('gemini-2.5-flash'),
     system: systemPrompt,
     messages: await convertToModelMessages(messages),
     temperature: 0.8,

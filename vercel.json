@@ -1,11 +1,6 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "build": {
-    "env": {
-      "GROQ_API_KEY": "@groq_api_key"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",

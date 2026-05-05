@@ -15,7 +15,7 @@ export default function Home() {
   const { messages, sendMessage, error, status } = useChat({});
 
   const chatErrorMessage = error
-    ? 'Groq belum bisa merespons. Periksa GROQ_API_KEY, koneksi jaringan, atau status layanan free tier.'
+    ? 'Gemini belum bisa merespons. Periksa GEMINI_API_KEY atau GOOGLE_GENERATIVE_AI_API_KEY, koneksi jaringan, atau status layanan Google AI.'
     : null;
 
   const majorCount = currentSpread.filter((card) => card.arcana === 'Major').length;
