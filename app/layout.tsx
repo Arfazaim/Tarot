@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, Geist_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 
@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   description:
     'Tarot platform bertema astral dengan UI kosmik, pembacaan yang reflektif, dan AI yang merangkai makna kartu secara puitis.',
   keywords: ['tarot', 'astral', 'reading', 'oracle', 'ai'],
+};
+
+export const viewport: Viewport = {
   themeColor: '#050816',
 };
 
