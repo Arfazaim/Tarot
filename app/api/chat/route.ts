@@ -6,11 +6,18 @@ import { DrawnCard } from '@/features/tarot/types';
 // Memaksa eksekusi di Edge Runtime untuk performa streaming
 export const runtime = 'edge';
 
-const google = createGoogleGenerativeAI({
-  apiKey: process.env.GEMINI_API_KEY ?? process.env.GOOGLE_GENERATIVE_AI_API_KEY,
-});
-
 export async function POST(req: Request) {
+  const geminiApiKey = process.env.GEMINI_API_KEY?.trim();
+
+  if (!geminiApiKey) {
+    return new Response('GEMINI_API_KEY is missing.', {
+      status: 500,
+      headers: { 'content-type': 'text/plain; charset=utf-8' },
+    });
+  }
+
+  const gemini = createGoogleGenerativeAI({ apiKey: geminiApiKey });
+
   const body = await req.json().catch(() => ({}));
   const messages = Array.isArray(body.messages) ? body.messages : [];
   const question = typeof body.question === 'string' && body.question.trim().length > 0 ? body.question : 'Pembacaan umum';
@@ -19,7 +26,7 @@ export async function POST(req: Request) {
   const systemPrompt = generateTarotSystemPrompt(question, drawnCards);
 
   const result = streamText({
-    model: google('gemini-2.5-flash'),
+    model: gemini('gemini-2.5-flash'),
     system: systemPrompt,
     messages: await convertToModelMessages(messages),
     temperature: 0.8,

@@ -11,7 +11,7 @@ This is a Next.js 16 App Router codebase. Before changing routing, metadata, fon
 - `components/ui/TarotCard.tsx` owns the card flip interaction and visual reveal.
 - `features/tarot/engine.ts` handles deck access, shuffling, and draws.
 - `features/ai/prompts.ts` defines the tarot reading voice and response structure.
-- `app/api/chat/route.ts` streams the assistant response through Gemini using `GEMINI_API_KEY` or `GOOGLE_GENERATIVE_AI_API_KEY`.
+- `app/api/chat/route.ts` streams the assistant response through Gemini using `GEMINI_API_KEY`.
 
 ## Editing Rules
 

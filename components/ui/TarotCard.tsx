@@ -1,8 +1,9 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { DrawnCard } from '@/features/tarot/types';
+import { playSoundEffect } from '@/features/audio/sound';
 
 interface Props {
   card: DrawnCard;
@@ -14,6 +15,8 @@ const arcanaGradient: Record<'Major' | 'Minor', string> = {
   Minor: 'from-cyan-200 via-sky-400 to-indigo-400',
 };
 
+const fallbackCardArt = '/assets/cards/fallback-card.svg';
+
 const getCardCaption = (card: DrawnCard) =>
   card.arcana === 'Major' ? `Major Arcana ${card.number}` : `${card.suit} ${card.number}`;
 
@@ -21,10 +24,21 @@ export default function TarotCard({ card, delay = 0 }: Props) {
   const [isRevealed, setIsRevealed] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
+  const revealSoundPlayed = useRef(false);
 
   const rotationZ = card.orientation === 'Reversed' ? 180 : 0;
   const hoverRotation = card.orientation === 'Reversed' ? -1.5 : 1.5;
   const caption = getCardCaption(card);
+  const resolvedArtPath = imageFailed ? fallbackCardArt : card.imagePath;
+
+  const handleReveal = () => {
+    if (!revealSoundPlayed.current) {
+      revealSoundPlayed.current = true;
+      void playSoundEffect('flip');
+    }
+
+    setIsRevealed(true);
+  };
 
   return (
     <motion.button
@@ -37,7 +51,7 @@ export default function TarotCard({ card, delay = 0 }: Props) {
       transition={{ delay, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
       aria-pressed={isRevealed}
       aria-label={`Buka kartu ${card.name}`}
-      onClick={() => setIsRevealed(true)}
+      onClick={handleReveal}
     >
       <motion.div
         className="absolute inset-0 preserve-3d"
@@ -49,18 +63,42 @@ export default function TarotCard({ card, delay = 0 }: Props) {
 
         <div className="absolute inset-3 backface-hidden overflow-hidden rounded-[1.2rem]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,rgba(251,191,36,0.22),transparent_42%),radial-gradient(circle_at_50%_80%,rgba(96,165,250,0.12),transparent_32%)]" />
-          <div className="absolute inset-0 flex flex-col justify-between rounded-[1rem] border border-white/10 bg-[linear-gradient(180deg,rgba(8,11,24,0.94),rgba(4,7,16,0.92))] p-4 text-center text-white">
-            <div className="space-y-3">
-              <p className="text-[0.62rem] uppercase tracking-[0.5em] text-amber-100/80">Astral Tarot</p>
-              <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-white/15 bg-[radial-gradient(circle,_rgba(255,255,255,0.08),rgba(255,255,255,0.02)_60%,transparent_61%)]">
-                <div className="h-18 w-18 rounded-full border border-amber-200/60 bg-[radial-gradient(circle,_rgba(251,191,36,0.7),rgba(8,11,24,0.92)_62%,transparent_64%)] shadow-[0_0_32px_rgba(251,191,36,0.22)]" />
-              </div>
+
+          {!imageFailed ? (
+            <Image
+              src={resolvedArtPath}
+              alt={card.name}
+              fill
+              sizes="272px"
+              className={`object-cover object-center transition-[opacity,transform] duration-500 ${imageLoaded ? 'scale-105 opacity-35 blur-[0.5px] saturate-75' : 'opacity-0'}`}
+              draggable={false}
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageFailed(true)}
+            />
+          ) : (
+            <Image
+              src={fallbackCardArt}
+              alt={card.name}
+              fill
+              sizes="272px"
+              className={`object-cover object-center transition-opacity duration-500 ${imageLoaded ? 'opacity-35' : 'opacity-0'}`}
+              draggable={false}
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+            />
+          )}
+
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,11,24,0.76),rgba(4,7,16,0.94))]" />
+
+          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-[1rem] border border-white/10 p-4 text-center text-white">
+            <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/15 bg-[radial-gradient(circle,_rgba(255,255,255,0.08),rgba(255,255,255,0.02)_60%,transparent_61%)]">
+              <div className="h-18 w-18 rounded-full border border-amber-200/60 bg-[radial-gradient(circle,_rgba(251,191,36,0.7),rgba(8,11,24,0.92)_62%,transparent_64%)] shadow-[0_0_32px_rgba(251,191,36,0.22)]" />
             </div>
 
-            <div className="space-y-2">
+            <div className="mt-4 space-y-1.5">
+              <p className="text-[0.62rem] uppercase tracking-[0.5em] text-amber-100/80">Astral Tarot</p>
               <p className="text-xs uppercase tracking-[0.35em] text-slate-300/70">Klik untuk membuka</p>
-              <p className="text-2xl font-semibold text-white text-glow">{card.orientation}</p>
-              <p className="text-sm text-slate-300/80">{card.spreadPosition}</p>
             </div>
           </div>
         </div>

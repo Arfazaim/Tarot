@@ -6,8 +6,7 @@ import { useChat } from '@ai-sdk/react';
 import { useTarotStore } from '@/store/useTarotStore';
 import { drawCards, getFullDeck } from '@/features/tarot/engine';
 import TarotCard from '@/components/ui/TarotCard';
-
-const DECK_SIZE = getFullDeck().length;
+import { playSoundEffect } from '@/features/audio/sound';
 
 export default function Home() {
   const { currentSpread, setSpread, question, clearSpread } = useTarotStore();
@@ -15,20 +14,18 @@ export default function Home() {
   const { messages, sendMessage, error, status } = useChat({});
 
   const chatErrorMessage = error
-    ? 'Gemini belum bisa merespons. Periksa GEMINI_API_KEY atau GOOGLE_GENERATIVE_AI_API_KEY, koneksi jaringan, atau status layanan Google AI.'
+    ? 'Gemini belum bisa merespons. Periksa GEMINI_API_KEY, koneksi jaringan, atau status layanan Google AI.'
     : null;
 
-  const majorCount = currentSpread.filter((card) => card.arcana === 'Major').length;
-  const reversedCount = currentSpread.filter((card) => card.orientation === 'Reversed').length;
-  const uprightCount = currentSpread.length - reversedCount;
-
   const handleDrawThreeCards = () => {
+    void playSoundEffect('draw');
     const deck = getFullDeck();
     const drawn = drawCards(deck, 3, ['Masa Lalu', 'Masa Kini', 'Masa Depan']);
     setSpread(drawn, 'Apa pola energi yang membentuk langkah saya saat ini?');
   };
 
   const handleDrawCelticCross = () => {
+    void playSoundEffect('draw');
     const deck = getFullDeck();
     const positions = [
       'Inti Situasi',
@@ -46,6 +43,11 @@ export default function Home() {
     setSpread(drawn, 'Bacakan energi saya secara mendalam dengan Celtic Cross.');
   };
 
+  const handleResetSpread = () => {
+    void playSoundEffect('reset');
+    clearSpread();
+  };
+
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -57,8 +59,6 @@ export default function Home() {
     setInput('');
   };
 
-  const latestQuestion = question || 'Belum ada pertanyaan yang terikat pada spread ini.';
-
   return (
     <main className="relative min-h-screen overflow-hidden text-slate-100">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(251,191,36,0.12),transparent_28%),radial-gradient(circle_at_20%_20%,rgba(129,140,248,0.18),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(56,189,248,0.12),transparent_22%)]" />
@@ -68,7 +68,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="grid gap-6 rounded-[2rem] border border-white/10 bg-slate-950/45 p-6 shadow-[0_35px_90px_rgba(2,6,23,0.45)] backdrop-blur-2xl lg:grid-cols-[minmax(0,1.4fr)_minmax(20rem,0.6fr)] lg:p-8"
+          className="rounded-[2rem] border border-white/10 bg-slate-950/45 p-6 shadow-[0_35px_90px_rgba(2,6,23,0.45)] backdrop-blur-2xl lg:p-8"
         >
           <div className="space-y-5">
             <div className="inline-flex items-center gap-3 rounded-full border border-amber-200/15 bg-white/5 px-4 py-2 text-[0.65rem] uppercase tracking-[0.45em] text-amber-100/85">
@@ -99,30 +99,12 @@ export default function Home() {
               </button>
               {currentSpread.length > 0 ? (
                 <button
-                  onClick={clearSpread}
+                  onClick={handleResetSpread}
                   className="rounded-full border border-white/10 bg-slate-950/40 px-5 py-3 text-sm font-semibold text-slate-200 transition duration-300 hover:-translate-y-0.5 hover:border-sky-200/25 hover:bg-white/10"
                 >
                   Reset Spread
                 </button>
               ) : null}
-            </div>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-              <p className="text-[0.65rem] uppercase tracking-[0.4em] text-slate-300/70">Deck</p>
-              <p className="mt-3 text-3xl font-semibold text-white">{DECK_SIZE}</p>
-              <p className="mt-2 text-sm text-slate-300/80">Kartu yang siap dibaca.</p>
-            </div>
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-              <p className="text-[0.65rem] uppercase tracking-[0.4em] text-slate-300/70">Major</p>
-              <p className="mt-3 text-3xl font-semibold text-amber-200">{majorCount}</p>
-              <p className="mt-2 text-sm text-slate-300/80">Energi transformatif dan simbol besar.</p>
-            </div>
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-              <p className="text-[0.65rem] uppercase tracking-[0.4em] text-slate-300/70">Orientasi</p>
-              <p className="mt-3 text-3xl font-semibold text-sky-200">{reversedCount}/{uprightCount}</p>
-              <p className="mt-2 text-sm text-slate-300/80">Reversed vs Upright di spread aktif.</p>
             </div>
           </div>
         </motion.header>
@@ -136,18 +118,18 @@ export default function Home() {
           >
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-[0.65rem] uppercase tracking-[0.45em] text-amber-100/70">Reading chamber</p>
-                <h2 className="mt-2 text-3xl font-semibold text-white">Panggung kartu</h2>
+                <p className="text-[0.65rem] uppercase tracking-[0.45em] text-amber-100/70">Kanal tertutup</p>
+                <h2 className="mt-2 text-3xl font-semibold text-white">Ruang segel</h2>
                 <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-300">
                   {currentSpread.length > 0
-                    ? 'Buka kartu satu per satu untuk melihat lapisan visual dan arah energi di setiap posisi.'
-                    : 'Belum ada spread. Tarik kartu untuk mengisi ruang observatorium ini.'}
+                    ? 'Buka kartu satu per satu. Detail lain tetap tersembunyi sampai segel diangkat.'
+                    : 'Belum ada spread. Tarik kartu untuk membuka arsip yang disegel.'}
                 </p>
               </div>
 
               {currentSpread.length > 0 ? (
                 <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">
-                  {currentSpread.length} kartu aktif
+                  {currentSpread.length} segel aktif
                 </div>
               ) : null}
             </div>
@@ -198,33 +180,13 @@ export default function Home() {
             className="flex flex-col gap-6"
           >
             <section className="rounded-[2rem] border border-white/10 bg-slate-950/55 p-5 shadow-[0_35px_90px_rgba(2,6,23,0.42)] backdrop-blur-2xl sm:p-6">
-              <p className="text-[0.65rem] uppercase tracking-[0.45em] text-sky-100/70">Reading state</p>
-              <h2 className="mt-2 text-2xl font-semibold text-white">{latestQuestion}</h2>
-
-              <div className="mt-5 space-y-3 rounded-[1.5rem] border border-white/10 bg-white/5 p-4 text-sm text-slate-300">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-slate-400">Spread aktif</span>
-                  <span className="font-medium text-white">{currentSpread.length || '0'}</span>
-                </div>
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-slate-400">Kartu terbalik</span>
-                  <span className="font-medium text-white">{reversedCount}</span>
-                </div>
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-slate-400">Kartu tegak</span>
-                  <span className="font-medium text-white">{uprightCount}</span>
-                </div>
-              </div>
-            </section>
-
-            <section className="rounded-[2rem] border border-white/10 bg-slate-950/55 p-5 shadow-[0_35px_90px_rgba(2,6,23,0.42)] backdrop-blur-2xl sm:p-6">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[0.65rem] uppercase tracking-[0.45em] text-amber-100/70">AI oracle</p>
-                  <h2 className="mt-2 text-2xl font-semibold text-white">Percakapan kartu</h2>
+                  <p className="text-[0.65rem] uppercase tracking-[0.45em] text-amber-100/70">Kanal sandi</p>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">Percakapan tersembunyi</h2>
                 </div>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
-                  {status === 'streaming' ? 'AI menjawab...' : `${messages.length} pesan`}
+                  {status === 'streaming' ? 'Membuka kanal...' : `${messages.length} sandi`}
                 </span>
               </div>
 
@@ -237,7 +199,7 @@ export default function Home() {
               <div className="mt-5 max-h-[24rem] space-y-3 overflow-y-auto pr-1">
                 {messages.length === 0 ? (
                   <div className="rounded-[1.5rem] border border-dashed border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-300">
-                    Setelah kartu dibuka, tulis pertanyaan lanjutan di bawah. AI akan membaca nuansa spread, bukan hanya satu kartu.
+                    Setelah kartu dibuka, kirim satu sandi di bawah. Jawaban akan dibaca dari pola, bukan dari data mentah.
                   </div>
                 ) : (
                   messages.map((message) => {
@@ -261,7 +223,7 @@ export default function Home() {
                 <input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Tanyakan sesuatu pada kartu..."
+                  placeholder="Kirim sandi ke kanal..."
                   className="flex-1 rounded-full border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
                 />
                 <button

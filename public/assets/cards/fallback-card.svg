@@ -1,0 +1,49 @@
+<svg width="512" height="853" viewBox="0 0 512 853" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="76" y1="38" x2="445" y2="803" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111A33"/>
+      <stop offset="0.45" stop-color="#081022"/>
+      <stop offset="1" stop-color="#02050D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 260) rotate(90) scale(265 220)">
+      <stop offset="0" stop-color="#FCD34D" stop-opacity="0.36"/>
+      <stop offset="0.55" stop-color="#60A5FA" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#0B1021" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="frame" x1="58" y1="34" x2="454" y2="819" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="0.45" stop-color="#D4A62A"/>
+      <stop offset="1" stop-color="#8B5E12"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="805" rx="36" fill="url(#bg)"/>
+  <rect x="24" y="24" width="464" height="805" rx="36" stroke="url(#frame)" stroke-width="4"/>
+  <rect x="42" y="42" width="428" height="769" rx="28" stroke="#F8E7B3" stroke-opacity="0.18" stroke-width="1.5"/>
+
+  <ellipse cx="256" cy="256" rx="175" ry="155" fill="url(#glow)"/>
+
+  <circle cx="256" cy="244" r="96" stroke="#FDE68A" stroke-opacity="0.24" stroke-width="2"/>
+  <circle cx="256" cy="244" r="56" stroke="#FDE68A" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="256" cy="244" r="22" fill="#FDE68A" fill-opacity="0.72"/>
+
+  <path d="M256 123L273.8 187.2L338 205L273.8 222.8L256 287L238.2 222.8L174 205L238.2 187.2L256 123Z" fill="#FDE68A" fill-opacity="0.82"/>
+  <path d="M378 164L386.4 188.6L411 197L386.4 205.4L378 230L369.6 205.4L345 197L369.6 188.6L378 164Z" fill="#FCD34D" fill-opacity="0.72"/>
+  <path d="M134 188L141.8 210.4L164 218L141.8 225.6L134 248L126.2 225.6L104 218L126.2 210.4L134 188Z" fill="#93C5FD" fill-opacity="0.7"/>
+  <path d="M156 562C198 498 314 498 356 562" stroke="#FDE68A" stroke-opacity="0.34" stroke-width="3" stroke-linecap="round"/>
+  <path d="M180 594C214 560 298 560 332 594" stroke="#60A5FA" stroke-opacity="0.22" stroke-width="2" stroke-linecap="round"/>
+
+  <path d="M148 660C172 636 208 624 256 624C304 624 340 636 364 660" stroke="#FDE68A" stroke-opacity="0.24" stroke-width="2" stroke-linecap="round"/>
+  <path d="M168 694C188 678 218 670 256 670C294 670 324 678 344 694" stroke="#60A5FA" stroke-opacity="0.18" stroke-width="2" stroke-linecap="round"/>
+
+  <g opacity="0.7">
+    <circle cx="96" cy="110" r="2" fill="#FFFFFF"/>
+    <circle cx="418" cy="118" r="1.8" fill="#FFFFFF"/>
+    <circle cx="404" cy="332" r="2" fill="#FFFFFF"/>
+    <circle cx="112" cy="362" r="1.6" fill="#FFFFFF"/>
+    <circle cx="84" cy="248" r="1.4" fill="#FFFFFF"/>
+    <circle cx="424" cy="262" r="1.4" fill="#FFFFFF"/>
+  </g>
+
+  <rect x="96" y="714" width="320" height="1.5" rx="0.75" fill="#FDE68A" fill-opacity="0.2"/>
+  <text x="256" y="756" text-anchor="middle" fill="#F8E7B3" fill-opacity="0.75" font-family="Georgia, 'Times New Roman', serif" font-size="26" letter-spacing="4">ASTRAL TAROT</text>
+</svg>

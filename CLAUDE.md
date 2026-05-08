@@ -15,7 +15,7 @@ Astral Tarot is a Next.js tarot reading experience with an AI oracle. The visual
 - Use `app/page.tsx` for page composition and reading flow.
 - Use `components/ui/TarotCard.tsx` for reveal and card styling.
 - Use `features/ai/prompts.ts` for the reading voice and structure.
-- Use `app/api/chat/route.ts` for streaming behavior through Gemini with `GEMINI_API_KEY` or `GOOGLE_GENERATIVE_AI_API_KEY`.
+- Use `app/api/chat/route.ts` for streaming behavior through Gemini with `GEMINI_API_KEY`.
 - Use `app/globals.css` for shared theme tokens and cosmic background treatment.
 
 ## Asset Convention
